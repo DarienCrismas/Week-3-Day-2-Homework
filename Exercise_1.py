@@ -8,18 +8,22 @@
 class ShoppingCart():
     def __init__(self):
         self.cart = {}  
+
     def add_Item(self):
         item = input("What would you like to add?")
         quantity = input("And how many will you need? ")
         self.cart[item.title()] = quantity
+
     def show_Items(self):
         print(self.cart)
+
     def remove_Items(self):
         deletion = input("What would you like to delete?")
         if self.cart.get(deletion.title()):
             del self.cart[deletion.title()]
         else:
             print("I'm sorry, that isn't on your list.")
+            
     def change_Item_Quantity(self):
         item_change = input("What item would you like to change the quantity of? ")
         if self.cart.get(item_change.title()):
